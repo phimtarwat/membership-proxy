@@ -2,7 +2,7 @@ module.exports = async (req, res) => {
   const { user_id, token, mode } = req.query;
   const fingerprint = req.headers["user-agent"] || "unknown";
 
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbxoT-6YP0ho9MmQ_g24i4sp1eK-1vBXgux2zVXjDQBGeftfHx66UlgO1KIqQbL5zDLh2g/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbxcXWJIhE2kAzNQ8vekU37YMNyaLUx2nKJVF7C4puc0EvepkONxBasjOxhMuv1svX4UWw/exec";
   const url = `${scriptUrl}?user_id=${user_id}&token=${token}&mode=${mode}&fingerprint=${encodeURIComponent(fingerprint)}`;
 
   try {
