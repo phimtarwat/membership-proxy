@@ -1,13 +1,12 @@
 module.exports = async (req, res) => {
-  const { user_id, token, days } = req.query;
+  const { user_id, token, mode } = req.query;
+  const fingerprint = req.headers["user-agent"] || "unknown";
 
-  // ✅ URL ของ Google Apps Script (ใส่ของคุณตรงนี้)
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbz9DwcqftMXbES7iXus0ABI97WrnoJvsh-3GADNoSIp5eYDv8_nwnbQna3Be7ELA6g1IQ/exec";
-
-  const url = `${scriptUrl}?user_id=${user_id}${token ? "&token=" + token : ""}${days ? "&days=" + days : ""}`;
+  const scriptUrl = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+  const url = `${scriptUrl}?user_id=${user_id}&token=${token}&mode=${mode}&fingerprint=${encodeURIComponent(fingerprint)}`;
 
   try {
-    const response = await fetch(url); // ✅ ใช้ fetch built-in
+    const response = await fetch(url);
     const data = await response.json();
     res.status(200).json(data);
   } catch (err) {
