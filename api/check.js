@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   // 🔹 ใส่ URL Apps Script ที่คุณ deploy แล้ว (ต้องเป็น /exec)
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbw6OaScUkvnLpLo1yKZYf862wyM8t11iJHtoTr9iXfbA56xYu8VY62GIEdI_-GThTyoOQ/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbx2Gh0CwV0ISBp9RzunqBYATNOIsJLF8Q8j20j8qB_D17QGn-pmHadha6K4Y_UhlO3wnA/exec";
 
   const url = `${scriptUrl}?user_id=${encodeURIComponent(user_id)}&token=${encodeURIComponent(token)}&mode=${encodeURIComponent(mode || "check")}&fingerprint=${encodeURIComponent(fingerprint || "unknown")}`;
 
