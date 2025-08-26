@@ -4,12 +4,12 @@ export default async function handler(req, res) {
   if (!user_id || !token) {
     return res.status(400).json({
       status: "error",
-      message: "ต้องใส่ user_id และ token"
+      message: "กรุณาระบุ user id และ token ของคุณ"
     });
   }
 
-  // ✅ URL ของ Google Apps Script (แก้ตรงนี้)
-  const scriptUrl = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+  // 🔹 ใส่ URL Apps Script ที่คุณ deploy แล้ว (ต้องเป็น /exec)
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbw6OaScUkvnLpLo1yKZYf862wyM8t11iJHtoTr9iXfbA56xYu8VY62GIEdI_-GThTyoOQ/exec";
 
   const url = `${scriptUrl}?user_id=${encodeURIComponent(user_id)}&token=${encodeURIComponent(token)}&mode=${encodeURIComponent(mode || "check")}&fingerprint=${encodeURIComponent(fingerprint || "unknown")}`;
 
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       data = JSON.parse(text);
     } catch (err) {
       console.error("❌ Response is not JSON:", text);
-      return res.status(500).json({ status: "error", message: "Invalid JSON from Apps Script" });
+      return res.status(500).json({ status: "error", message: "Invalid JSON from Apps Script", raw: text });
     }
 
     return res.status(200).json(data);
