@@ -8,7 +8,7 @@ app.get("/check", async (req, res) => {
   const { user_id, token, days, fingerprint } = req.query;
 
   // ✅ เปลี่ยนเป็น URL Google Apps Script API ของคุณ
-  const scriptUrl = "https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbwTw5LQX7Hr--ZCGwL925wXcupemkoqnij92lnstQhXaiLVxNbd-qKePS2dbpdq4LnIaA/exec";
 
   const url = `${scriptUrl}?user_id=${user_id}${token ? "&token=" + token : ""}${days ? "&days=" + days : ""}${fingerprint ? "&fingerprint=" + fingerprint : ""}`;
 
