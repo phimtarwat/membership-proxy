@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     });
   }
 
-  const scriptUrl = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbxRCVRAK4is7GcqNEuq-NcPplxCrRSAt21gJ8xDhbNm_iIGAPYKzXOvNepob4wqdsDyQg/exec";
   const url = `${scriptUrl}?user_id=${encodeURIComponent(user_id)}&token=${encodeURIComponent(token)}&mode=use&fingerprint=${encodeURIComponent(fingerprint || "unknown")}`;
 
   console.log("🔗 Fetching (USE):", url);
