@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     });
   }
 
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbzS7X0o8KVj2zTeE1dCknxPZpqFDXOKx-x3biu5y134UnFLv4QjhN-ocFShJlCpphWBnw/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbxabnSed4uE5akqQCkdd9dTMDA5C7KFzq7VlS6tCFqvDPSCDM0ESaFyUnWftlr6iM51qQ/exec";
   const url = `${scriptUrl}?user_id=${encodeURIComponent(user_id)}&token=${encodeURIComponent(token)}&mode=use&fingerprint=${encodeURIComponent(fingerprint || "unknown")}`;
 
   console.log("🔗 Fetching (USE):", url);
