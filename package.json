@@ -1,6 +1,7 @@
 {
-  "name": "membership-proxy",
+  "name": "membership-proxy",   // ← ตรงนี้เปลี่ยนเป็นชื่อที่คุณชอบได้เลย
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
