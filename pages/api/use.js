@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ status: "error", message: "ต้องใส่ user_id และ token" });
   }
 
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbwTw5LQX7Hr--ZCGwL925wXcupemkoqnij92lnstQhXaiLVxNbd-qKePS2dbpdq4LnIaA/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbxabnSed4uE5akqQCkdd9dTMDA5C7KFzq7VlS6tCFqvDPSCDM0ESaFyUnWftlr6iM51qQ/exec";
   const url = `${scriptUrl}?user_id=${user_id}&token=${token}&mode=use${fingerprint ? "&fingerprint=" + fingerprint : ""}`;
 
   try {
